@@ -30,15 +30,15 @@ Bu mimariyi test etmek için iki ayrı terminal açılmalıdır:
 Plaintext
 
 Heart-Disease-Diagnosis/
-├── dataset/           # Analizde kullanılan heart.csv veri seti
-├── models/            # Eğitilmiş ve kaydedilmiş (.joblib/.pkl) modeller
-├── research/          # Veri ön işleme adımları ve model geliştirme (Jupyter Notebooks)
-├── api.py             # FastAPI backend kodları
-├── app_pro.py         # Streamlit frontend (Arayüz) kodları
-├── train.py           # Modelin uçtan uca eğitim ve pipeline kodları
-├── predict.py         # Model tahmini için kullanılan test scripti
-├── requirements.txt   # Gerekli kütüphaneler listesi
-└── README.md          # Proje dökümantasyonu
+* ├── dataset/           # Analizde kullanılan heart.csv veri seti
+* ├── models/            # Eğitilmiş ve kaydedilmiş (.joblib/.pkl) modeller
+* ├── research/          # Veri ön işleme adımları ve model geliştirme (Jupyter Notebooks)
+* ├── api.py             # FastAPI backend kodları
+* ├── app_pro.py         # Streamlit frontend (Arayüz) kodları
+* ├── train.py           # Modelin uçtan uca eğitim ve pipeline kodları
+* ├── predict.py         # Model tahmini için kullanılan test scripti
+* ├── requirements.txt   # Gerekli kütüphaneler listesi
+* └── README.md          # Proje dökümantasyonu
 
 
 ## 🧪 Model Geliştirme Süreci
