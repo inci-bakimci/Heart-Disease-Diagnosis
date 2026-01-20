@@ -1,32 +1,32 @@
-🏥 Kalp Hastalığı Teşhis Sistemi (End-to-End ML Pipeline)
+# 🏥 Kalp Hastalığı Teşhis Sistemi (End-to-End ML Pipeline)
+
 Bu proje, kalp hastalığı riskini tahmin etmek için geliştirilmiş, yüksek doğruluklu bir makine öğrenmesi sistemidir. Proje; veri ön işlemeden model eğitimine, API geliştirmeden kullanıcı arayüzüne kadar uçtan uca bir mimariye sahiptir.
 
-🚀 Proje Hakkında Genel Bakış
-Proje kapsamında 7 farklı algoritma üzerinde çalışılmış ve tıbbi teşhislerde kritik olan Sınıf Dengesi (Hasta/Sağlıklı ayrımı) gözetilerek Özel Yapılandırılmış XGBoost modeli şampiyon seçilmiştir.
+## 🚀 Proje Hakkında Genel Bakış
+Proje kapsamında 7 farklı algoritma üzerinde çalışılmış ve tıbbi teşhislerde kritik olan **Sınıf Dengesi** (Hasta/Sağlıklı ayrımı) gözetilerek **Özel Yapılandırılmış XGBoost** modeli şampiyon seçilmiştir.
 
-Doğruluk (Accuracy): %88
+* **Doğruluk (Accuracy):** %88
+* **Duyarlılık (Recall - Class 1):** %89
+* **Duyarlılık (Recall - Class 0):** %85
 
-Duyarlılık (Recall - Class 1): %89
+---
 
-Duyarlılık (Recall - Class 0): %85
+## 🛠️ Teknik Mimari ve Çalıştırma
+Sistem iki ana modülden oluşmaktadır: **Backend (API)** ve **Frontend (Streamlit Arayüzü)**.
 
-🛠️ Teknik Mimari ve Çalıştırma
-Sistem iki ana modülden oluşmaktadır: Backend (API) ve Frontend (Streamlit Arayüzü).
-
-Sistemi Başlatma Adımları:
+### **Sistemi Başlatma Adımları**
 Bu mimariyi test etmek için iki ayrı terminal açılmalıdır:
 
-Terminal 1 (Backend - FastAPI): Modelin istekleri beklediği sunucu.
+1. **Terminal 1 (Backend - FastAPI):** Modelin istekleri beklediği sunucu.
+   ```bash
+   uvicorn api:app --reload
+   
+2. **Terminal 2 (Frontend - Streamlit):** Kullanıcının veri girişi yaptığı arayüz.
+   ```bash
+   streamlit run app_pro.py
 
-Bash
-
-uvicorn api:app --reload
-Terminal 2 (Frontend - Streamlit): Kullanıcının veri girişi yaptığı arayüz.
-
-Bash
-
-streamlit run app_pro.py
-📂 Proje Yapısı (Directory Structure)
+   
+## 📂 Proje Yapısı (Directory Structure)
 Plaintext
 
 Heart-Disease-Diagnosis/
@@ -39,9 +39,11 @@ Heart-Disease-Diagnosis/
 ├── predict.py         # Model tahmini için kullanılan test scripti
 ├── requirements.txt   # Gerekli kütüphaneler listesi
 └── README.md          # Proje dökümantasyonu
-🧪 Model Geliştirme Süreci
-Veri Ön İşleme: Eksik verilerin (Cholesterol 0 değerleri) median yöntemiyle sızıntısız doldurulması.
 
-Özellik Mühendisliği: Kalp sağlığına yönelik klinik skorların (DTS, RPP) modele entegre edilmesi.
 
-Optimizasyon: GridSearchCV ile hiperparametrelerin en iyi dengeyi verecek şekilde ayarlanması.
+## 🧪 Model Geliştirme Süreci
+Veri Ön İşleme: Eksik verilerin (özellikle Cholesterol 0 değerleri) median yöntemiyle veri sızıntısı (leakage) önlenerek doldurulması.
+
+Özellik Mühendisliği: Kalp sağlığına yönelik klinik skorların (DTS - Duke Treadmill Score, RPP - Rate Pressure Product) modele entegre edilmesi.
+
+Optimizasyon: GridSearchCV ile hiperparametrelerin her iki sınıfta da en yüksek dengeyi sağlayacak şekilde optimize edilmesi.
